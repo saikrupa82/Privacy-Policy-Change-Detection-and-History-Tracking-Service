@@ -14,7 +14,7 @@ Django Authentication – How to build Login/Logout/Signup for custom User
 
 I have build a Dajngo Project with Authentication app that has login/logout/signup with custom fields such as <strong>full name</strong> and <strong>age</strong>:
 
-<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/1a12bc62-138a-4804-a9e9-f47b61a67619" width="930px" >
+<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/e8913f1d-395c-4cc7-bb7d-377ce2bdd429" width="930px" >
 
 <p>I have code our custom <code>signup()</code> function, <code>login()</code> and <code>logout()</code> is automatically implemented by Django <code>auth</code>.</p>
 
@@ -24,7 +24,9 @@ All User data will be saved in MySQL/PostgreSQL database.
 
 <p>Here is the folders and files structure that we will create in the next steps.</p>
 
-<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/26eccaa8-c33e-44a5-adbd-f528ad417d4f" width="300" >
+<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/69fce237-c3e0-4478-a3ff-a26f006ba389"  >
+
+
 
 <h2><span id="Setup_Django_Custom_Authentication_Project">Setup Django Custom Authentication Project</span></h2>
 
@@ -279,7 +281,10 @@ Running migrations:
 
 <p>Check MySQL Database, for example, now we can see that a table for CustomUser model was generated and it’s named <code>authen_customuser</code>:</p>
 
-<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/d77f3a8c-65bd-4fa6-a3d0-1b0d217e8459" width="620"> </span>
+<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/39328918-fc28-430a-a62d-068358ab8454"> </span>
+
+
+
 <h2><span id="Set_urlpatterns_038_handle_signuploginlogout_requests">Set urlpatterns &amp; handle signup/login/logout requests</span></h2>
 
 <b><span id="Set_url_patterns">• Set url patterns</span></b><br>
@@ -435,7 +440,9 @@ def signup(request):
 <p>We can use <code>is_authenticated</code> attribute to specify whether the user is logged in or not, then show his full name for a website greeting.</p>
 
 <p>So, when user aren’t logged in, it looks like:</p>
-<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/06c05f52-50a5-4471-bdd5-24c3fa48cee4" > 
+<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/a00e40c5-6483-4ea7-a5bc-7872f5e2bf19" > 
+
+
 
 <b><span id="Edit_or_Create_Django_custom_Signup_template">• Edit or Create Django custom Signup.html</span></b><br>
 
@@ -482,7 +489,8 @@ def signup(request):
 
 <p>it looks like:</p>
 
-<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/c8a920f4-ac8b-4c79-81cb-58024df31df6" > 
+<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/75e1360e-9a79-45b6-82d2-cc480f538af5" > 
+
 
 <b><span id="Edite_or_Create_Django_custom_Login_template">• Create Django custom login.html</span></b><br>
 
