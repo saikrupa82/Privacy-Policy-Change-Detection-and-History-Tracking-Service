@@ -1,0 +1,26 @@
+{% extends 'auth/base.html' %}
+
+{% block title %}Logout{% endblock title %}
+
+{% block body %}
+
+<div class="container mx-auto mt-10">
+    <div class="w-full max-w-xs mx-auto">
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form method="post">
+                {% csrf_token %}
+                <p class="text-gray-700 text-base mb-4">
+                    Are you sure you want to logout?
+                </p>
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Logout
+                </button>
+                <a href="{% url 'home' %}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 ml-4">
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
