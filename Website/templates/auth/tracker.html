@@ -1,0 +1,89 @@
+{% extends 'auth/base.html' %}
+
+{% block title %}Track New Page{% endblock title %}
+
+{% block content %}
+<div class="container mx-auto p-6 bg-white shadow-md my-12">
+    <h2 class="text-center text-2xl font-bold mb-6">What would you like to track?</h2>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-6">
+        <div class="w-full sm:w-1/3">
+            <button id="singleUrlButton" class="border rounded-lg p-4 flex flex-col items-center justify-center text-center w-full cursor-pointer">
+                <h3 class="mb-2 font-bold text-lg">Single URL</h3>
+                <p class="text-sm text-gray-600">Track changes for a single page</p>
+            </button>
+        </div>
+        <div class="w-full sm:w-1/3">
+            <button id="multipleUrlButton" class="border rounded-lg p-4 flex flex-col items-center justify-center text-center w-full cursor-pointer">
+                <h3 class="mb-2 font-bold text-lg">Add Multiple URLs</h3>
+                <p class="text-sm text-gray-600">Paste multiple similar URL addresses</p>
+            </button>
+        </div>
+    </div>
+
+    <div id="singleUrlForm" class="hidden">
+        <div class="bg-gray-100 p-4 shadow rounded-lg mt-6">
+            <h2 class="text-lg font-semibold mb-4">Your page</h2>
+                    <form method="post" class="grid grid-cols-1 md:grid-cols-3 gap-4" action="{% url 'tracker' %}"> 
+            {% csrf_token %}
+
+                <div>
+                    <label for="url-address" class="block text-sm font-medium text-gray-700">URL Address</label>
+                    <input type="url" id="url-address" name="url-address" class="mt-1 p-2 border border-gray-300 rounded-md shadow-sm w-full" placeholder="https://www.example.com" required>
+                    <p class="text-xs text-gray-500 mt-1">Please enter the URL address of the page you would like to track.</p>
+                </div>
+                <div>
+                    <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                    <input type="text" id="title" name="title" class="mt-1 p-2 border border-gray-300 rounded-md shadow-sm w-full" placeholder="">
+                    <p class="text-xs text-gray-500 mt-1">Keep it blank to use the page title.</p>
+                </div>
+                <div class="flex items-end mb-1">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                        Track Page
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="multipleUrlForm" class="hidden">
+        <div class="container mx-auto mt-8">
+    <div class="bg-gray-100 p-4 shadow rounded-lg">
+      <div class="flex items-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <h2 class="text-lg font-semibold text-gray-700">Your page</h2>
+      </div>
+      <div>
+        <p class="mb-2 text-gray-700">Please enter the URL addresses you want to track.</p>
+        <label for="urls" class="block text-sm font-medium text-gray-700">Enter URLs (0)</label>
+        <textarea id="urls" name="urls" rows="4" class="mt-1 p-2 border border-gray-300 rounded-md shadow-sm w-full" placeholder="https://www.example.com\nhttps://www.example.org || My Example title\nhttps://www.example.net || My Another title"></textarea>
+        <p class="text-xs text-gray-500 mt-1">Please enter your URLs, one per line. You may provide a custom label by separating URL with two pipe '||' characters (e.g., http://example.com || My Label). If you do not provide the label, page title will be used.</p>
+      </div>
+    </div>
+    <div class="flex items-end mb-1">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Track Page
+        </button>
+    </div>
+  </div>
+    </div>
+</div>
+
+<script>
+    // Toggle single URL form
+    document.getElementById('singleUrlButton').addEventListener('click', function() {
+        var singleForm = document.getElementById('singleUrlForm');
+        singleForm.classList.toggle('hidden');
+        document.getElementById('multipleUrlForm').classList.add('hidden');
+    });
+
+    // Toggle multiple URLs form
+    document.getElementById('multipleUrlButton').addEventListener('click', function() {
+        var multipleForm = document.getElementById('multipleUrlForm');
+        multipleForm.classList.toggle('hidden');
+        document.getElementById('singleUrlForm').classList.add('hidden');
+    });
+</script>
+{% endblock content %}

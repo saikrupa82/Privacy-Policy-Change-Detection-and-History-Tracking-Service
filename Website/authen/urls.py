@@ -4,11 +4,12 @@ from authen import views
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('login/', auth_views.LoginView.as_view(template_name='auth/login.html'),name='login'),
-
+    path('login/', auth_views.LoginView.as_view(template_name='auth/login.html'), name='login'),
     path('logout/', views.logout_view, name='logout'),
-    path('signup/', views.signup, name="signup")
-
+    path('signup/', views.signup, name="signup"),
+    path('homepage/', views.homepage_view, name="homepage"),  # Ensure this matches the redirect call
+    path('tracker/', views.tracker, name="tracker"), # Ensure this matches the redirect call
+    path('trackingstatus/<str:string>/', views.trackingstatus_view, name='trackingstatus'),
 ]
 
 

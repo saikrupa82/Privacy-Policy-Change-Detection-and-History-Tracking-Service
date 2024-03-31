@@ -1,0 +1,52 @@
+{% extends 'auth/base.html' %}
+
+{% load static %}
+
+{% block title %}My Tracked Pages{% endblock %}
+
+{% block content %}
+<div class="container mx-auto mt-12 p-6 bg-white shadow-md">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-bold text-gray-800">My Tracked Pages · {{ tracked_pages_count }}/1</h2>
+        <a href="{% url 'tracker' %}" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Track New Page
+        </a>
+    </div>
+  
+    <div class="overflow-x-auto relative">
+        <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <tr>
+                    <th scope="col" class="py-3 px-6">Title</th>
+                    <th scope="col" class="py-3 px-6">URL</th>
+                    <th scope="col" class="py-3 px-6">Status</th>
+                    <th scope="col" class="py-3 px-6">Last Checked</th>
+                    <th scope="col" class="py-3 px-6">Last Changed</th>
+                    <th scope="col" class="py-3 px-6">Latest</th>
+                </tr>
+            </thead>
+            {% for policy in user_policies %}
+            <tr>
+              <td>
+                <a href="{% url 'trackingstatus' string=policy.policy_name %}">{{ policy.policy_name }}</a>
+              </td>
+                <td>{{ policy.url }}</td>
+                <td>{{ policy.status }}</td>
+                <td>{{ policy.last_checked }}</td>
+                <td>{{ policy.last_changed }}</td>
+                <td>{{ policy.latest_content }}</td>
+                <td>{{ policy.user }}</td>
+
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center py-4 text-gray-700">
+                    No tracked pages found. <a href="{% url 'tracker' %}" class="text-blue-600 hover:underline">Add your first tracked page</a>.
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

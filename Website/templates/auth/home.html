@@ -1,40 +1,21 @@
 {% extends 'auth/base.html' %}
 {% block title %}Home{% endblock title %}
 
-{% block body %}
+{% block non_user_content %}
 <div class="container mx-auto mt-5">
     <div class="flex justify-center">
         <div class="w-full max-w-2xl">
-            {% if user.is_authenticated %}
-                <!-- Welcome banner for authenticated users -->
-                <div class="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md" role="alert">
-                    <div class="flex">
-                        <div class="p-2">
-                            <svg class="fill-current h-6 w-6 text-green-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <path d="M10 20a8 8 0 100-16 8 8 0 000 16zM8 9l3-3 3 3 1-1-4-4-4 4 1 1zm6 2l-3 3-3-3-1 1 4 4 4-4-1-1z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="font-bold">Welcome Back!</p>
-                            <p class="text-sm">Hi {{ user.full_name }}, we're glad to see you again.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Logout Button -->
-                <form action="{% url 'logout' %}" method="post" class="mt-4">
-                    {% csrf_token %}
-                    <button type="submit" class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Logout</button>
-                </form>
-                
-            {% else %}
+                <script type="text/javascript">
+                    // It's generally better to handle redirection on the server side with Django's redirect()
+                    // If you need to do it on the client side, it's better to place the script at the end of the document,
+                    // and ensure you have the URL name 'homepage' defined in your Django urls.py
+                    window.location.href = "{% url 'homepage' %}";
+                </script>
                 <!-- Welcome banner for guests -->
                 <div class="bg-blue-100 border-t-4 border-blue-500 rounded-b text-blue-900 px-4 py-3 shadow-md" role="alert">
                     <div class="flex">
                         <div class="p-2">
-                            <svg class="fill-current h-6 w-6 text-blue-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <path d="M10 20a8 8 0 100-16 8 8 0 000 16zm-1-9V8h2v3h3v2h-3v3h-2v-3H7v-2h2z" />
-                            </svg>
+                            <!-- SVG here -->
                         </div>
                         <div>
                             <p class="font-bold">Join Our Community!</p>
@@ -52,9 +33,7 @@
                         Sign Up
                     </a>
                 </div>
-
-            {% endif %}
         </div>
     </div>
 </div>
-{% endblock body %}
+{% endblock non_user_content %}

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'authen.apps.AuthenConfig',
+    
+
 
 ]
 
@@ -77,6 +79,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'DjangoAuth.wsgi.application'
 
+from urllib.parse import quote_plus
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -92,8 +95,11 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT' : '3306',
     }
+
 }
 
+
+# DATABASE_ROUTERS = ['Website.routers.AuthRouter','Website.routers.TrackerRouter']
 
 
 
