@@ -82,7 +82,10 @@ Offers a granular view of each policy's tracking settings, giving users full con
 - **Regular Security Audits**: To maintain a high security standard, PolicyTracker undergoes periodic security audits, ensuring adherence to best practices and mitigation of potential vulnerabilities.
 
 ## Database Models
-![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/67384de9-1848-4142-bc1e-2e835a53d8eb)
+
+
+<img src="https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/67384de9-1848-4142-bc1e-2e835a53d8eb" width="50%" height="50%">
+
 
 ### CustomUser
 This model extends the Django `AbstractUser`, adding additional fields like `full_name` and `age` for a more complete user profile.
