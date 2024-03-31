@@ -97,6 +97,10 @@ class CustomUser(AbstractUser):
 - `full_name` - Stores the user's full name for display purposes.
 - `age` - (Optional) Stores the user's age.
 
+#### Secure storage of user login details in a database.
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/5d66da19-51d9-4839-97c0-4ffa524e6659)
+
+
 ### PolicyTracker
 The core model of the application, tracking privacy policy URLs and changes.
 ``` bash
@@ -128,6 +132,8 @@ class PolicyTracker(models.Model):
 - `last_changed` - Stores when the policy content was last changed.
 - `latest_content` - Stores the full content of the policy.
 - `content_dict` - Stores a JSON structure of key content changes for analysis.
+  #### Structured data stored in a database, illustrating the organized repository of information.
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/66702dbb-20f5-45c3-9867-b15d7fcfdd73)
 
 ## Database Selection
 
