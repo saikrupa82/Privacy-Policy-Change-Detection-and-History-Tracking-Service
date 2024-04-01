@@ -393,7 +393,6 @@ Start the load test by running the configured monitor or collection runner.
 ![Screenshot 2024-03-30 233957](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/d2100a52-7e2a-4aaf-b8b0-6ceeabf742b7)
 ![Screenshot 2024-03-30 234042](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/2276efdd-d61f-462b-be5e-70003103577c)
 
-Include a summary of the test results here, outlining performance metrics and any identified issues.
 
 By repeating these steps, you can iteratively improve the performance of your application. The successful handling of 1000 users in a login scenario is a positive indicator, and continuous testing can help maintain and improve this performance as the application evolves.
 The application crash during the Postman API load testing with 10,000 users suggests significant resource utilization, likely surpassing the system's capacity. This scenario underscores the necessity for resource optimization and scalability enhancements to ensure stability under high load, highlighting the importance of continuous performance monitoring and system adjustments to accommodate growing user demands efficiently.
