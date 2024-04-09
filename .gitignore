@@ -1,0 +1,7 @@
+Capstone\Scripts
+Capstone\Lib\site-packages
+Capstone\Include
+Capstone\Website\DjangoAuth\__pycache__
+Capstone\Website\DjangoAuth\settings.py
+Capstone\Website\authen\migrations
+Capstone\Website\authen\__pycache__

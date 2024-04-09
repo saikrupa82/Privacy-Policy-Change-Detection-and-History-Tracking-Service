@@ -1,0 +1,128 @@
+{
+    "last_checked": "2024-04-09T08:56:17.257974",
+    "changes": [
+        {
+            "timestamp": "2024-04-09T08:40:05.394638",
+            "content": {
+                "Privacy": [],
+                "UMBC POLICY ON WEB SITE AND UMBC APP PRIVACY STATEMENTUMBC Policy X-1.00.06": [],
+                "I. Policy Statement": [
+                    "The University of Maryland, Baltimore County (UMBC) values individuals’ privacy and actively seeks to preserve the privacy rights of those who share information with us. Your trust is important to us and we believe you have the right to know how information submitted through a university Web site or the UMBC app is handled.",
+                    "As explanation of UMBC’s online information policy and practices and to assist you in better protecting your privacy, we provide the following privacy notice.",
+                    "Privacy Notice:The following information explains the Internet privacy policy and practices the university has adopted for its official Web sites and the UMBC app. However, in legal terms, it shall not be construed as a contractual promise, and the university reserves the right to amend it at any time without notice. Privacy and public records obligations of the university are governed by applicable Maryland statutes and by any applicable U.S. federal laws."
+                ],
+                "II. PURPOSE FOR POLICY": [
+                    "The University of Maryland, Baltimore County (UMBC) is committed to ensuring the privacy and accuracy of your confidential information. UMBC does not actively share personal information gathered from its Web servers or the UMBC app. However, because UMBC is a public institution, some information collected from UMBC Web sites and the UMBC app, including the summary server log information, e-mails sent to Web sites, and information collected from Web-based forms, may be subject to the Maryland Access to Public Records Act (Maryland Public Information Act (PIA) Title 10, Subtitle 6, Part III of the State Government Article). This means that while UMBC does not actively share information, in some cases UMBC may be compelled by law to release information gathered from its Web servers.",
+                    "As part of its commitment to maintain the privacy of its Web and UMBC app users, UMBC has developed this privacy statement. The statement has two purposes:",
+                    "UMBC also complies with the Family Educational Rights and Privacy Act (FERPA), which prohibits the release of education records without student permission. Although FERPA regulations apply only to UMBC students, the university is equally committed to protecting the privacy of all visitors to our Web site and users of the UMBC app."
+                ],
+                "III. APPLICABILITY AND IMPACT STATEMENT": [
+                    "UMBC by and through its academic, research and administrative units and programs, owns, controls, operates and/or maintains the UMBC app and Web sites under a number of domains. This Web and UMBC App Privacy Policy applies to all domains within the UMBC web environment.",
+                    "WHO SHOULD READ THIS POLICY"
+                ],
+                "IV. CONTACTS": [],
+                "V. UNIVERSITY POLICY": [
+                    "University Web space includes hundreds of sites with varying levels of University involvement and commitment as outlined below:",
+                    "Except as noted, the information in this privacy notice applies to all official UMBC Web sites, which are defined as – the Web pages of university, schools, departments, divisions or other units and any other sites specifically designated as official by a vice president, dean, department head or director. Official pages are generally recognizable by a standard page footer carrying the university logo, contact information and reference to this privacy statement. The official UMBC app also falls under the same policies and rules as official university web sites.",
+                    "Within the UMBC domain – signified by the address “umbc.edu” or within the range of Internet protocol addresses assigned to UMBC – you may find Web sites over which the university has no editorial responsibility or control. Such sites are considered unofficial and include, but are not limited to, the Web pages of individual faculty members or students and the Web pages of student organizations and other entities not formally a part of the university. While UMBC encourages compliance with this Web Privacy Statement at such sites, in order to better understand the policies and practices under which they operate, please consult the privacy statements of individual sites or seek information directly from the persons responsible for those sites.",
+                    "The UMBC Web consists of many Web sites. Some sites hosted by UMBC may adopt different privacy statements as their specific needs require. If an official University Web Site has a privacy statement that is different from this statement, that policy must be approved by DoIT, and it must be posted on the Official UMBC Site and the central campus policy web site. However, no site can adopt a privacy statement that in any way supersedes federal or state regulations.",
+                    "The UMBC Web site contains links to hundreds of external Web sites. The university is not responsible for the privacy practices or the content of the external Web sites we link to.",
+                    "Information Gathered by UMBC Web servers and the UMBC app generate temporary logs that may include, but are not limited to the following information:",
+                    "The data is used in aggregate by IT custodians to tune the Web site and app for its efficiency and is not ordinarily associated with specific individuals. Raw data from the Web server logs is only shared with the custodian of each Web site. Summary reports produced from the logs help Web publishers determine what Web browsers and pages are most popular.",
+                    "Some pages within the umbc.edu domain may contain content that is served from external third parties. For example, a umbc.edu Web site might include a graphic logo or a script from a third party.",
+                    "In this example, the logo would be third party content served from a Web server outside the umbc.edu domain (www.other-org.com in this case). Third party content in umbc.edu is not limited to graphics, but this is the most frequent use.",
+                    "UMBC does not transmit any information to these third parties as part of such requests. However, when you visit umbc.edu pages that contain third party content, information such as your IP address, date, browser, and requested page are transmitted from your computer to that third party. UMBC is not responsible for the privacy practices of these external third parties.",
+                    "Cookies are small pieces of data stored by the Web browser. Cookies are often used to remember information about preferences and pages you have visited. For example, when you visit some sites on the Web you might see a “Welcome Back” message. The first time you visited the site a cookie was probably set on your computer; when you return, the cookie is read again. You can configure your Web browser to refuse to accept cookies, to disable cookies, and to remove cookies from your hard drive as needed.",
+                    "UMBC Web servers use cookies in the centralized authentication system called Single- Sign-On. These cookies are used so you will not have to repeatedly enter user names and passwords when you go to different parts of the Web site. You are normally required to enter a UMBC ID when you request data about yourself or to ensure that you are a member of the University community. This login process uses Secure Sockets Layer (SSL) so the user name and password are encrypted between the Web browser and our Web server.",
+                    "Some Web servers within UMBC may also use cookies to retain user preference information. It is against university policy to share this information with external third parties.",
+                    "Although no computer system is 100% secure, UMBC has deployed extensive security measures to protect against the loss, misuse, or alteration of the information under our control.",
+                    "Several sites within UMBC enable you to pay for products or services online with a credit card. Unless otherwise noted, these transactions are encrypted. It is university policy that confidential information you enter in the transaction is used only for the purposes described in that transaction, unless an additional use is specifically stated on that site. All attempts should be made to perform online transactions at externally hosted sites not affiliated with UMBC. E-commerce transactions at external, third-party sites are subject to the external party’s privacy and security policies.",
+                    "UMBC does, upon explicit request of users, share information with other parties and gather information from other private data providers. For example, the university receives test scores from testing agencies and will send transcripts to other schools. This is done only at the request of users (persons to whom the information applies). Unless specifically required under public information requests filed under the Maryland Access to Public Records Act (Maryland Public Information Act (PIA) Title 10, Subtitle 6, Part III of the State Government Article), it is against university policy to release confidential information gathered through the Web or UMBC app, such as pages visited, or personalized preferences. For example, the University’s portal, myUMBC, enables users to customize the content they see on their personal page. This information cannot be shared with external third parties.",
+                    "Consistent with FERPA, we do not release personal student information, other than public directory information, to other parties unless we receive explicit written authorization to do so.",
+                    "UMBC makes some public chat rooms, forums, message boards, and news groups available to its users. The university does not ordinarily log public chat sessions, however, any information that is disclosed in these areas becomes public information and you should therefore exercise caution when deciding to disclose your confidential information in such places. Academic chat sessions and discussion forums, such as those in Blackboard, may be logged. However, these educational records are protected from disclosure by FERPA.",
+                    "UMBC is a research institution. At any time there are numerous online surveys being conducted in affiliation with the University. It is University policy that confidential information gathered in these online surveys is used only for the research purposes indicated in the survey. Unless otherwise noted on the specified survey, your answers are confidential and individual responses will not be shared with other parties unless required by the Maryland Access to Public Records Act (Maryland Public Information Act (PIA) Title 10, Subtitle 6- III of the State Government Article). Aggregate data, which does not contain personally identifiable information, from surveys may be shared with external third parties.",
+                    "If a person would like to have information about them deleted from a UMBC website or service, the request should be sent to privacy@umbc.edu. We process privacy requests in accordance with all applicable laws, regulations, and policies."
+                ],
+                "VI. DEFINITIONS": [],
+                "VII. APPROVAL AND PROCEDURES": [],
+                "VIII. DOCUMENTATION:": [],
+                "IX. RESTRICTIONS AND EXCLUSIONS:": [
+                    "See policy above."
+                ],
+                "X. RELATED ADMINISTRATIVE POLICIES AND PROCEDURES": [
+                    "X-1.00.01 UMBC Policy for Responsible Computing",
+                    "Legal References:",
+                    "University of Maryland, Baltimore County1000 Hilltop Circle, Baltimore, MD 21250",
+                    "Directions & Parking Information"
+                ],
+                "Resources": [],
+                "Important Contacts": [],
+                "Emergency Info": [],
+                "Contact Us": [],
+                "Top Stories of the Week": [],
+                "Subscribe to UMBC Weekly Top Stories": [],
+                "I am interested in:": []
+            }
+        }
+    ],
+    "last_update": {
+        "Privacy": [],
+        "UMBC POLICY ON WEB SITE AND UMBC APP PRIVACY STATEMENTUMBC Policy X-1.00.06": [],
+        "I. Policy Statement": [
+            "The University of Maryland, Baltimore County (UMBC) values individuals’ privacy and actively seeks to preserve the privacy rights of those who share information with us. Your trust is important to us and we believe you have the right to know how information submitted through a university Web site or the UMBC app is handled.",
+            "As explanation of UMBC’s online information policy and practices and to assist you in better protecting your privacy, we provide the following privacy notice.",
+            "Privacy Notice:The following information explains the Internet privacy policy and practices the university has adopted for its official Web sites and the UMBC app. However, in legal terms, it shall not be construed as a contractual promise, and the university reserves the right to amend it at any time without notice. Privacy and public records obligations of the university are governed by applicable Maryland statutes and by any applicable U.S. federal laws."
+        ],
+        "II. PURPOSE FOR POLICY": [
+            "The University of Maryland, Baltimore County (UMBC) is committed to ensuring the privacy and accuracy of your confidential information. UMBC does not actively share personal information gathered from its Web servers or the UMBC app. However, because UMBC is a public institution, some information collected from UMBC Web sites and the UMBC app, including the summary server log information, e-mails sent to Web sites, and information collected from Web-based forms, may be subject to the Maryland Access to Public Records Act (Maryland Public Information Act (PIA) Title 10, Subtitle 6, Part III of the State Government Article). This means that while UMBC does not actively share information, in some cases UMBC may be compelled by law to release information gathered from its Web servers.",
+            "As part of its commitment to maintain the privacy of its Web and UMBC app users, UMBC has developed this privacy statement. The statement has two purposes:",
+            "UMBC also complies with the Family Educational Rights and Privacy Act (FERPA), which prohibits the release of education records without student permission. Although FERPA regulations apply only to UMBC students, the university is equally committed to protecting the privacy of all visitors to our Web site and users of the UMBC app."
+        ],
+        "III. APPLICABILITY AND IMPACT STATEMENT": [
+            "UMBC by and through its academic, research and administrative units and programs, owns, controls, operates and/or maintains the UMBC app and Web sites under a number of domains. This Web and UMBC App Privacy Policy applies to all domains within the UMBC web environment.",
+            "WHO SHOULD READ THIS POLICY"
+        ],
+        "IV. CONTACTS": [],
+        "V. UNIVERSITY POLICY": [
+            "University Web space includes hundreds of sites with varying levels of University involvement and commitment as outlined below:",
+            "Except as noted, the information in this privacy notice applies to all official UMBC Web sites, which are defined as – the Web pages of university, schools, departments, divisions or other units and any other sites specifically designated as official by a vice president, dean, department head or director. Official pages are generally recognizable by a standard page footer carrying the university logo, contact information and reference to this privacy statement. The official UMBC app also falls under the same policies and rules as official university web sites.",
+            "Within the UMBC domain – signified by the address “umbc.edu” or within the range of Internet protocol addresses assigned to UMBC – you may find Web sites over which the university has no editorial responsibility or control. Such sites are considered unofficial and include, but are not limited to, the Web pages of individual faculty members or students and the Web pages of student organizations and other entities not formally a part of the university. While UMBC encourages compliance with this Web Privacy Statement at such sites, in order to better understand the policies and practices under which they operate, please consult the privacy statements of individual sites or seek information directly from the persons responsible for those sites.",
+            "The UMBC Web consists of many Web sites. Some sites hosted by UMBC may adopt different privacy statements as their specific needs require. If an official University Web Site has a privacy statement that is different from this statement, that policy must be approved by DoIT, and it must be posted on the Official UMBC Site and the central campus policy web site. However, no site can adopt a privacy statement that in any way supersedes federal or state regulations.",
+            "The UMBC Web site contains links to hundreds of external Web sites. The university is not responsible for the privacy practices or the content of the external Web sites we link to.",
+            "Information Gathered by UMBC Web servers and the UMBC app generate temporary logs that may include, but are not limited to the following information:",
+            "The data is used in aggregate by IT custodians to tune the Web site and app for its efficiency and is not ordinarily associated with specific individuals. Raw data from the Web server logs is only shared with the custodian of each Web site. Summary reports produced from the logs help Web publishers determine what Web browsers and pages are most popular.",
+            "Some pages within the umbc.edu domain may contain content that is served from external third parties. For example, a umbc.edu Web site might include a graphic logo or a script from a third party.",
+            "In this example, the logo would be third party content served from a Web server outside the umbc.edu domain (www.other-org.com in this case). Third party content in umbc.edu is not limited to graphics, but this is the most frequent use.",
+            "UMBC does not transmit any information to these third parties as part of such requests. However, when you visit umbc.edu pages that contain third party content, information such as your IP address, date, browser, and requested page are transmitted from your computer to that third party. UMBC is not responsible for the privacy practices of these external third parties.",
+            "Cookies are small pieces of data stored by the Web browser. Cookies are often used to remember information about preferences and pages you have visited. For example, when you visit some sites on the Web you might see a “Welcome Back” message. The first time you visited the site a cookie was probably set on your computer; when you return, the cookie is read again. You can configure your Web browser to refuse to accept cookies, to disable cookies, and to remove cookies from your hard drive as needed.",
+            "UMBC Web servers use cookies in the centralized authentication system called Single- Sign-On. These cookies are used so you will not have to repeatedly enter user names and passwords when you go to different parts of the Web site. You are normally required to enter a UMBC ID when you request data about yourself or to ensure that you are a member of the University community. This login process uses Secure Sockets Layer (SSL) so the user name and password are encrypted between the Web browser and our Web server.",
+            "Some Web servers within UMBC may also use cookies to retain user preference information. It is against university policy to share this information with external third parties.",
+            "Although no computer system is 100% secure, UMBC has deployed extensive security measures to protect against the loss, misuse, or alteration of the information under our control.",
+            "Several sites within UMBC enable you to pay for products or services online with a credit card. Unless otherwise noted, these transactions are encrypted. It is university policy that confidential information you enter in the transaction is used only for the purposes described in that transaction, unless an additional use is specifically stated on that site. All attempts should be made to perform online transactions at externally hosted sites not affiliated with UMBC. E-commerce transactions at external, third-party sites are subject to the external party’s privacy and security policies.",
+            "UMBC does, upon explicit request of users, share information with other parties and gather information from other private data providers. For example, the university receives test scores from testing agencies and will send transcripts to other schools. This is done only at the request of users (persons to whom the information applies). Unless specifically required under public information requests filed under the Maryland Access to Public Records Act (Maryland Public Information Act (PIA) Title 10, Subtitle 6, Part III of the State Government Article), it is against university policy to release confidential information gathered through the Web or UMBC app, such as pages visited, or personalized preferences. For example, the University’s portal, myUMBC, enables users to customize the content they see on their personal page. This information cannot be shared with external third parties.",
+            "Consistent with FERPA, we do not release personal student information, other than public directory information, to other parties unless we receive explicit written authorization to do so.",
+            "UMBC makes some public chat rooms, forums, message boards, and news groups available to its users. The university does not ordinarily log public chat sessions, however, any information that is disclosed in these areas becomes public information and you should therefore exercise caution when deciding to disclose your confidential information in such places. Academic chat sessions and discussion forums, such as those in Blackboard, may be logged. However, these educational records are protected from disclosure by FERPA.",
+            "UMBC is a research institution. At any time there are numerous online surveys being conducted in affiliation with the University. It is University policy that confidential information gathered in these online surveys is used only for the research purposes indicated in the survey. Unless otherwise noted on the specified survey, your answers are confidential and individual responses will not be shared with other parties unless required by the Maryland Access to Public Records Act (Maryland Public Information Act (PIA) Title 10, Subtitle 6- III of the State Government Article). Aggregate data, which does not contain personally identifiable information, from surveys may be shared with external third parties.",
+            "If a person would like to have information about them deleted from a UMBC website or service, the request should be sent to privacy@umbc.edu. We process privacy requests in accordance with all applicable laws, regulations, and policies."
+        ],
+        "VI. DEFINITIONS": [],
+        "VII. APPROVAL AND PROCEDURES": [],
+        "VIII. DOCUMENTATION:": [],
+        "IX. RESTRICTIONS AND EXCLUSIONS:": [
+            "See policy above."
+        ],
+        "X. RELATED ADMINISTRATIVE POLICIES AND PROCEDURES": [
+            "X-1.00.01 UMBC Policy for Responsible Computing",
+            "Legal References:",
+            "University of Maryland, Baltimore County1000 Hilltop Circle, Baltimore, MD 21250",
+            "Directions & Parking Information"
+        ],
+        "Resources": [],
+        "Important Contacts": [],
+        "Emergency Info": [],
+        "Contact Us": [],
+        "Top Stories of the Week": [],
+        "Subscribe to UMBC Weekly Top Stories": [],
+        "I am interested in:": []
+    }
+}
