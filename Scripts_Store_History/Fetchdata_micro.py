@@ -1,51 +1,82 @@
-import requests
+import os
+import json
+from datetime import datetime
 from bs4 import BeautifulSoup
+from urllib.parse import urlparse
 
-def scrape_privacy_policy(url):
-    # Send a GET request to the given URL
-    response = requests.get(url)
+def fetch_and_parse(file_path):
+    """Reads a local HTML file and parses it into a BeautifulSoup object."""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return BeautifulSoup(file.read(), 'html.parser')
+    except Exception as e:
+        print(f"Error reading the file: {e}")
+        return None
+
+def extract_sections(soup):
+    """Extracts text sections from the parsed HTML based on heading and paragraph tags."""
+    sections = {}
+    current_heading = None
+    for element in soup.find_all(['h2', 'p']):
+        if element.name == 'h2':
+            current_heading = element.get_text(strip=True)
+            sections[current_heading] = []
+        elif element.name == 'p' and current_heading:
+            sections[current_heading].append(element.get_text(strip=True))
+    return sections
+
+def compare_and_update_history(file_path, new_content):
+    """Compares new content with existing history, updates if changes are detected."""
+    base_folder = os.path.dirname(file_path)
+    os.makedirs(base_folder, exist_ok=True)
+    history_file = os.path.join(base_folder, os.path.basename(file_path).replace('.html', '_history.json'))
     
-    # If the GET request is successful, proceed to scrape the page
-    if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        # Initialize a dictionary to store the sections and their content
-        sections = {}
-        
-        # Find the heading using its ID and then find the corresponding content by ID
-        heading_id = 'mainpersonaldatawecollect_Header'  # This might need to be adjusted based on actual ID
-        content_id = 'mainpersonaldatawecollect_ShortDescription'  # This is the ID you provided
-        
-        # Find the heading element
-        heading_element = soup.find(id=heading_id)
-        if heading_element:
-            # Extract the heading text
-            heading_text = heading_element.get_text(strip=True)
-            
-            # Find the content element by ID
-            content_element = soup.find(id=content_id)
-            if content_element:
-                # Extract the content text
-                content_text = content_element.get_text(separator=' ', strip=True)
-                
-                # Store the content in the dictionary
-                sections[heading_text] = content_text
-            else:
-                print(f"No content found for ID {content_id}")
-        else:
-            print(f"No heading found for ID {heading_id}")
-            
-        # Save the content to a file
-        filename = 'privacy_policy_content.txt'
-        with open(filename, 'w', encoding='utf-8') as file:
-            for heading, content in sections.items():
-                file.write(f"Section: {heading}\nContent: {content}\n\n")
-                
-        print(f"Content saved to {filename}")
-        
-    else:
-        print(f"Failed to fetch the page: status code {response.status_code}")
+    try:
+        with open(history_file, 'r', encoding='utf-8') as file:
+            history = json.load(file)
+    except FileNotFoundError:
+        history = {}
 
-# URL of the Microsoft Privacy Statement
-url = "https://privacy.microsoft.com/en-us/privacystatement"
-scrape_privacy_policy(url)
+    if 'last_update' not in history or history['last_update']['content'] != new_content:
+        timestamp = datetime.now().isoformat()
+        history.setdefault('changes', []).append({'timestamp': timestamp, 'content': new_content})
+        history['last_update'] = {'timestamp': timestamp, 'content': new_content}
+        print(f"Changes detected; history updated on {timestamp}.")
+    else:
+        print("No changes detected since the last update.")
+
+    # Always update the last_checked timestamp
+    history['last_checked'] = datetime.now().isoformat()
+    with open(history_file, 'w', encoding='utf-8') as file:
+        json.dump(history, file, ensure_ascii=False, indent=4)
+
+def scrape_privacy_policy(file_path):
+    """Scrapes a privacy policy from a local HTML file and manages its historical data."""
+    soup = fetch_and_parse(file_path)
+    if not soup:
+        print("Failed to parse the file.")
+        return
+    content = extract_sections(soup)
+    compare_and_update_history(file_path, content)
+
+def main():
+    # Placeholder import and scraping mechanism
+    import polipy  
+
+    url = input("Enter the URL of the privacy policy to scrape: ")
+    result = polipy.get_policy(url, screenshot=True)
+    domain_name = urlparse(url).netloc.replace('www.', '').split('.')[0]
+    output_dir = os.path.join(os.getcwd(), domain_name)
+
+    os.makedirs(output_dir, exist_ok=True)
+    # Save the result in a standardized location
+    result.save(output_dir)
+    
+    html_files = [f for f in os.listdir(output_dir) if f.endswith('.html')]
+    print("HTML files found:", html_files)
+
+    for file in html_files:
+        scrape_privacy_policy(os.path.join(output_dir, file))
+
+if __name__ == "__main__":
+    main()
