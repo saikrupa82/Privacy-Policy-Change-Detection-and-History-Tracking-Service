@@ -123,3 +123,4 @@ for html_file in html_files:
     scrape_privacy_policy(html_file, history_folder)
 
 print("Script completed.")
+
