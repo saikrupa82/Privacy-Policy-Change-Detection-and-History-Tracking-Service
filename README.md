@@ -2,56 +2,110 @@
 
 PolicyTracker is an innovative solution designed to keep users informed about the updates and changes to the privacy policies of various online services. This document outlines the core functionalities of PolicyTracker, focusing on its features, security measures, and the future direction of the platform.
 
-# Table of Contents
-- [Alpha Checkpoint](#alpha-check-point)
-1. - [Core Features Implementation](#core-features-implementation)
-   - [My Tracked Pages](#my-tracked-pages)
-   - [Track New Page](#track-new-page)
-   - [Detailed Policy View/Management](#detailed-policy-viewmanagement)
-   - [User Authentication System](#user-authentication-system)
-   - [Privacy Policy Tracking and Management](#privacy-policy-tracking-and-management)
-   - [Alerts and Notifications](#alerts-and-notifications)
-   - [Data Retrieval and Processing](#data-retrieval-and-processing)
-   - [Security Measures](#security-measures)
-   - [Database Models](#database-models)
-   - [Database Selection](#database-selection)
-   - [SQL in Django](#sql-in-django)
-   - [Security](#security)
-2. [Known Issues and Bugs Documentation](#known-issues-and-bugs-documentation)
-   - [Current Known Issues](#current-known-issues)
-   - [Reporting New Issues](#reporting-new-issues)
-3. [Testing Guidelines](#testing-guidelines)
-   - [Overview](#overview)
-   - [Testing Environment](#testing-environment)
-   - [Reporting Issues](#reporting-issues)
-   - [Continuous Integration (CI) and Continuous Deployment (CD)](#continuous-integration-ci-and-continuous-deployment-cd)
-4. [Installation and Configuration Instructions for PolicyTracker](#installation-and-configuration-instructions-for-policytracker)
-   - [Prerequisites](#prerequisites)
-   - [Step 1: Clone the Repository](#step-1-clone-the-repository)
-   - [Step 2: Set Up a Virtual Environment](#step-2-set-up-a-virtual-environment)
-   - [Step 3: Install Dependencies](#step-3-install-dependencies)
-   - [Step 4: Configure the Application](#step-4-configure-the-application)
-   - [Step 5: Initialize the Database](#step-5-initialize-the-database)
-   - [Step 6: Run the Development Server](#step-6-run-the-development-server)
-   - [Additional Configuration](#additional-configuration)
-5. [Architecture Overview](#architecture-overview)
-6. [Load Testing](#load-testing)
-   - [Overview](#overview-1)
-   - [Prerequisites](#prerequisites-1)
-   - [Setup](#setup)
-   - [Load Testing Steps](#load-testing-steps)
-   - [Optimization](#optimization)
-   - [Running the Tests](#running-the-tests)
-   - [Test Results](#test-results)
-7. [Risk Assessment and Mitigation Strategies for PolicyTracker](#risk-assessment-and-mitigation-strategies-for-policytracker)
-   - [Risk Identification](#risk-identification)
-   - [Mitigation Strategies](#mitigation-strategies)
-8. [Roadmap for Beta Release of PolicyTracker](#roadmap-for-beta-release-of-policytracker)
-   - [Key Features and Enhancements](#key-features-and-enhancements)
-9. [References](#references)
+#### [Demo Video of the application](https://drive.google.com/file/d/1SUcW5Zj4U6RNXyxki4oXlN0SHsDo1A0U/view?usp=drive_link)
+# PolicyTracker - Privacy Policy Tracking System
 
+PolicyTracker is an innovative solution designed to keep users informed about the updates and changes to the privacy policies of various online services. This document outlines the core functionalities of PolicyTracker, focusing on its features, security measures, and the future direction of the platform.
 
-# Alpha Check Point
+<details>
+<summary><h2>Table of Contents</h2></summary>
+
+- [Introduction](#policytracker---privacy-policy-tracking-system)
+- [Demo Video](#demo-video-of-the-application)
+- [Alpha Checkpoint](#alpha-checkpoint)
+  - [Core Features Implementation](#core-features-implementation)
+  - [Known Issues and Bugs Documentation](#known-issues-and-bugs-documentation)
+  - [Testing Guidelines](#testing-guidelines)
+  - [Installation and Configuration Instructions](#installation-and-configuration-instructions-for-policytracker)
+- [Beta Checkpoint](#beta-checkpoint)
+  - [Web Scraping System Flow](#web-scraping-system-flow)
+  - [Functional Specifications](#beta-functional-specifications)
+  - [Quality Criteria](#quality-criteria-for-beta-functionality)
+  - [Command Line Testing](#command-line-testing)
+- [Architecture Overview](#architecture-overview)
+- [Load Testing](#load-testing)
+- [Risk Assessment and Mitigation Strategies](#risk-assessment-and-mitigation-strategies-for-policytracker)
+- [Roadmap for Beta Release](#roadmap-for-beta-release-of-policytracker)
+- [References](#references)
+- [Installation Instructions](#installation-instructions)
+
+</details>
+
+## Demo Video of the application
+[Demo Video of the application](https://drive.google.com/file/d/1SUcW5Zj4U6RNXyxki4oXlN0SHsDo1A0U/view?usp=drive_link)
+
+## Alpha Checkpoint
+
+<details>
+<summary>PolicyTracker Alpha Release Overview</summary>
+
+### Core Features Implementation
+- [My Tracked Pages](#my-tracked-pages)
+- [Track New Page](#track-new-page)
+- [Detailed Policy View/Management](#detailed-policy-viewmanagement)
+- [User Authentication System](#user-authentication-system)
+- [Privacy Policy Tracking and Management](#privacy-policy-tracking-and-management)
+- [Alerts and Notifications](#alerts-and-notifications)
+- [Data Retrieval and Processing](#data-retrieval-and-processing)
+- [Security Measures](#security-measures)
+- [Database Models](#database-models)
+- [Database Selection](#database-selection)
+- [SQL in Django](#sql-in-django)
+- [Security](#security)
+
+### Known Issues and Bugs Documentation
+- [Current Known Issues](#current-known-issues)
+- [Reporting New Issues](#reporting-new-issues)
+
+### Testing Guidelines
+- [Overview](#overview)
+- [Testing Environment](#testing-environment)
+- [Reporting Issues](#reporting-issues)
+- [Continuous Integration (CI) and Continuous Deployment (CD)](#continuous-integration-ci-and-continuous-deployment-cd)
+
+### Installation and Configuration Instructions for PolicyTracker
+- [Prerequisites](#prerequisites)
+- [Step 1: Clone the Repository](#step-1-clone-the-repository)
+- [Step 2: Set Up a Virtual Environment](#step-2-set-up-a-virtual-environment)
+- [Step 3: Install Dependencies](#step-3-install-dependencies)
+- [Step 4: Configure the Application](#step-4-configure-the-application)
+- [Step 5: Initialize the Database](#step-5-initialize-the-database)
+- [Step 6: Run the Development Server](#step-6-run-the-development-server)
+- [Additional Configuration](#additional-configuration)
+
+</details>
+
+## Beta Checkpoint
+<details>
+<summary>PolicyTracker Beta Release Overview</summary>
+
+### Introduction
+- [Introduction](#introduction)
+
+### Web Scraping System Flow
+- [Web Scraping System Flow](#web-scraping-system-flow)
+
+### Beta Functional Specifications
+- [Beta Functional Specifications](#beta-functional-specifications)
+
+### Quality Criteria for Beta Functionality
+- [Quality Criteria for Beta Functionality](#quality-criteria-for-beta-functionality)
+
+### History Management and JSON Format
+- [ History Management and JSON Format](#history-management-and-json-format)
+
+### Command Line Testing
+- [Command Line Testing](#command-line-testing)
+
+### Installation
+- [Installation](#installation)
+
+### References
+- [References](#references)
+
+</details>
+
+# PolicyTracker - Alpha Release Overview
 
 ## Core Features Implementation
 
@@ -534,4 +588,250 @@ The PolicyTracker team is dedicated to continuous improvement and expansion of o
 - Django-Tailwind GitHub Repository: [timonweb/django-tailwind](https://github.com/timonweb/django-tailwind) - The GitHub repository for the Django-Tailwind integration package.
 - Stack Overflow Discussion on Tailwind CSS with Django: [How to use TailwindCSS with Django](https://stackoverflow.com/questions/63392426/how-to-use-tailwindcss-with-django) - Community solutions for using Tailwind CSS in Django projects.
 - Lucidchart: [Lucidchart](https://lucid.app/) - Online diagram software for creating and sharing professional flowcharts, process maps, and more.
+
+
+
+# PolicyTracker - Beta Release Overview
+
+## Table of Contents
+
+
+## Introduction
+The beta iteration of PolicyTracker demonstrates 85% completion of our envisioned product suite, showing significant enhancements from the alpha release towards a robust, user-oriented full-scale deployment.
+
+![System Architecture](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/8887619c-809f-439a-9531-b082b16c4c56)
+*Figure 1: System Architecture Overview*
+
+## Web Scraping System Flow
+PolicyTracker automates the collection, analysis, and storage of online privacy policy data through a sophisticated sequence of operations:
+
+### Website Interaction
+- **Data Source**: Begins with websites hosting privacy policies in their native HTML format.
+- **Data Gathering Process**: Executes systematic HTTP GET requests to fetch data comprehensively.
+
+``` bash
+# Main process begins here
+print("Script started.")
+url = input("Enter the URL of the privacy policy to scrape: ")
+print(f"Fetching privacy policy from: {url}")
+
+# Placeholder for actual scraping functionality
+result = polipy.get_policy(url, screenshot=True)
+result.save(output_dir='.')
+```
+### Scraping Model
+- **Technology**: Utilizes Beautiful Soup 4 for converting complex HTML documents into a navigable and parsable structure.
+- **Data Retrieval and Organization**: Converts raw HTML data into a structured format for further processing.
+
+### Parsing Model
+- **HTML Parsing**: Extracts relevant content from HTML documents using precise selectors to isolate key segments of privacy policies.
+``` bash
+def fetch_and_parse(file_path):
+    print(f"Attempting to read and parse the file at: {file_path}")
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            soup = BeautifulSoup(file.read(), 'html.parser')
+            print("File successfully parsed.")
+            return soup
+    except Exception as e:
+        print(f"Failed to read or parse the file due to: {e}")
+    return None
+
+def extract_sections(soup):
+    print("Extracting sections from HTML content.")
+    sections = {}
+    current_heading = None
+    for element in soup.find_all(['h2', 'p']):
+        if element.name == 'h2':
+            current_heading = element.get_text(strip=True)
+            sections[current_heading] = []
+        elif element.name == 'p' and current_heading:
+            sections[current_heading].append(element.get_text(strip=True))
+    print("Sections successfully extracted.")
+    return sections
+```
+### History Management Module
+- **Change Detection**: Employs algorithms to detect changes by comparing new data against a historical baseline.
+- **History Recording**: Documents changes to privacy policies over time, capturing their evolution.
+``` bash
+def compare_and_update_history(file_path, new_content, history_folder):
+    print(f"Checking for existing history in: {history_folder}")
+    os.makedirs(history_folder, exist_ok=True)
+    history_filename = os.path.join(history_folder, os.path.basename(file_path).replace('.html', '_history.json'))
+
+    history = {}
+    try:
+        with open(history_filename, 'r', encoding='utf-8') as file:
+            history = json.load(file)
+            print("Existing history found and loaded.")
+    except FileNotFoundError:
+        print("No history file found, creating a new one.")
+
+    print("Comparing the new content with the last update.")
+    last_update = history.get('last_update', {})
+    changes_detected = False
+    detailed_changes = []
+
+    for section, texts in new_content.items():
+        old_texts = last_update.get('content', {}).get(section, [])
+        diff = list(difflib.unified_diff(old_texts, texts, lineterm=''))
+        if diff:
+            changes_detected = True
+            detailed_changes.append((section, diff))
+ ```
+### Data Store
+- **Storage Solutions**: Utilizes efficient storage mechanisms to organize and store the scraped data.
+- **Data Usage**: Supports diverse applications from compliance tracking to advanced analytics.
+``` bash
+
+    if changes_detected:
+        print("Changes detected. Updating history.")
+        timestamp = datetime.now().isoformat()
+        history.setdefault('changes', []).append({
+            'timestamp': timestamp,
+            'content': new_content
+        })
+        history['last_update'] = {
+            'content': new_content,
+            'timestamp': timestamp,
+            'detailed_changes': detailed_changes
+        }
+    else:
+        print("No changes detected.")
+
+    print("Updating the last checked timestamp.")
+    history['last_checked'] = datetime.now().isoformat()
+
+    print("Saving the history to file.")
+    with open(history_filename, 'w', encoding='utf-8') as file:
+        json.dump(history, file, ensure_ascii=False, indent=4)
+```
+
+## Beta Functional Specifications
+Our beta release integrates several advanced features designed for effective policy management and user interaction:
+
+### User Management
+- **Security**: Implements OAuth for secure authentication and streamlined user experiences.
+
+### Policy Tracking and Management
+- **Tracking Features**: Allows users to actively monitor and manage the privacy policies of their interest with automated updates and alerts.
+
+### Data Processing
+- **Efficiency**: Features optimized data processing routines to ensure rapid content retrieval and transformation.
+
+## Quality Criteria for Beta Functionality
+The beta release of PolicyTracker is assessed through rigorous quality criteria, ensuring its readiness for limited production deployment:
+
+### Functionality Completion
+- **Implementation Coverage**: About 85% of the planned features are fully functional, enhancing user interactions and system usability.
+
+### System Resilience
+- **Operational Continuity**: Ensures high availability and minimal downtime through resilient system design.
+- **Stress Testing**: Demonstrates the system's capacity to handle peak loads and maintain performance.
+
+## History Management and JSON Format
+PolicyTracker maintains a comprehensive history of changes to each tracked privacy policy. This section outlines how the history data is structured in JSON format, making it easy for developers and system administrators to interpret and utilize the stored data.
+
+### JSON History File Structure
+Each privacy policy tracked by the application has an associated JSON file that stores the history of changes. Below is a description of the key components of the JSON structure:
+
+- **last_checked**: Timestamp indicating the last time the policy was checked for changes.
+- **changes**: An array of change records, where each record represents a detected change during a policy check.
+- **last_update**: Contains information about the most recent change including detailed changes, the timestamp of the change, and the new content.
+``` bash
+{
+  "last_checked": "2024-04-22T12:00:00Z",
+  "changes": [
+    {
+      "timestamp": "2024-04-21T12:00:00Z",
+      "content": {
+        "Introduction": [
+          "The Privacy Policy has been updated to reflect recent changes to data protection laws."
+        ],
+        "Data Collection": [
+          "We have expanded our data collection to include new analytical tools."
+        ]
+      }
+    }
+  ],
+  "last_update": {
+    "content": {
+      "Introduction": [
+        "The Privacy Policy has been updated to reflect recent changes to data protection laws."
+      ],
+      "Data Collection": [
+        "We have expanded our data collection to include new analytical tools."
+      ]
+    },
+    "timestamp": "2024-04-21T12:00:00Z",
+    "detailed_changes": [
+      {
+        "section": "Introduction",
+        "diff": [
+          "- old content line 1",
+          "+ new content line 1"
+        ]
+      },
+      {
+        "section": "Data Collection",
+        "diff": [
+          "- old content line 2",
+          "+ new content line 2"
+        ]
+      }
+    ]
+  }
+}
+
+```
+
+### Accessing and Using JSON Data
+The JSON history files are stored within the designated history folder for each policy, typically located at a path relative to the policy's HTML file. Developers can access these files to review historical data, generate reports, or integrate change tracking into other systems.
+
+To ensure seamless integration and manipulation of JSON data:
+
+- Utilize JSON parsing libraries available in most programming languages, such as json in Python, to load and manipulate the data programmatically.
+- Employ tools and libraries designed for handling large JSON files if dealing with extensive historical data to optimize performance.
+
+### Contributing to History Management
+Contributors interested in enhancing the history tracking capabilities of PolicyTracker can consider:
+
+- Improving the algorithms for change detection to capture more nuanced modifications.
+- Extending the JSON structure to include more detailed metadata about changes.
+- Optimizing the storage and retrieval of JSON files to enhance performance and scalability.
+
+## Command Line Testing
+Testing via the command line has proven the script's effectiveness in handling multiple URLs, reflecting the system's capability to scale and perform under load:
+
+```bash
+python fetchdata.py <URL1> <URL2> <URL3> ... <URLN>
+```
+OR
+
+```bash
+python fetchdata.py
+```
+![Screenshot 2024-04-21 222612](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/b2fb01fb-15c5-437b-bcff-7818a4a6ffd1)
+
+## Execution and Results
+Scalability and Performance: Confirmed the script's ability to process numerous privacy policy URLs concurrently without degradation in speed or accuracy.
+
+![Screenshot 2024-04-21 222638](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/095ce474-3e4a-4753-8369-78a8ad95d974)
+
+
+## Installation
+Clone the repository and install the necessary dependencies to get PolicyTracker running:
+
+``` bash
+git clone https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service.git
+cd Scripts_Store_History
+pip install -r requirements.txt
+```
+
+## Conclusion
+The PolicyTracker system has demonstrated significant capabilities in the field of privacy policy tracking, offering robust tools to users for managing and staying updated on policy changes. The alpha and beta releases showcase a solid foundation with essential functionalities that enhance user engagement and system reliability. Through comprehensive command line testing, the application has proven its ability to handle multiple operations simultaneously, ensuring scalability and performance under load.
+
+The installation process has been streamlined to allow for easy setup, enabling users and developers alike to deploy PolicyTracker efficiently. With ongoing improvements and community feedback, PolicyTracker aims to become the leading solution in privacy policy management.
+
+
 
