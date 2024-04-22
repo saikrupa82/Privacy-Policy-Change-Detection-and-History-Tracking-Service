@@ -33,7 +33,7 @@ Follow these steps to set up the Privacy Policy Change Detection tool:
 2. **Navigate to the Tool's Directory:**
 
    ```shell
-   cd Privacy-Policy-Change-Detection-and-History-Tracking-Service
+   cd Privacy-Policy-Change-Detection-and-History-Tracking-Service/Scripts_Store_History
    ```
 
 3. **Install Dependencies:**
@@ -51,7 +51,7 @@ Follow these steps to set up the Privacy Policy Change Detection tool:
    Run the script from your terminal or command prompt:
 
    ```python
-   python privacy_policy_tracker.py
+   python Fetchdata.py
    ```
 
 2. **Input the URL:**
@@ -59,7 +59,7 @@ Follow these steps to set up the Privacy Policy Change Detection tool:
    When prompted, enter the full URL of the privacy policy page you wish to track. Make sure to include the `http://` or `https://` prefix.
 
    ```plaintext
-   Enter the URL of the privacy policy to scrape: https://www.example.com/privacy
+   Enter the URL of the privacy policy to scrape: [https://policies.google.com/privacy?hl=en-US](https://policies.google.com/privacy?hl=en-US)
    ```
 
 3. **Review the Detected Changes:**
@@ -78,24 +78,30 @@ Follow these steps to set up the Privacy Policy Change Detection tool:
 - It compares the fetched policy text against a previously stored version (if available) in a JSON file named after the website's domain.
 - The comparison is done section by section, using the difflib library to identify detailed changes.
 
-### Logging and Notification
-
-- If changes are detected, the script updates the policy's history file, appending the new version with a timestamp and detailed notes on what was altered.
-- It then prints a concise report of changes to the terminal for the user to review.
-
 ## File Structure
 
-- `privacy_policy_tracker.py`: The main Python script.
+- `Fetchdata.py`: The main Python script.
 - `domainname_history.json`: Automatically generated files that store the change history for each tracked website's privacy policy.
 
-## Contributing
-
-We welcome contributions from the community, whether it's adding new features, improving the documentation, or reporting issues. Please follow the standard fork and pull request workflow on GitHub if you wish to contribute.
 
 ## Screenshots
+### Script Execution and JSON History File
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/c761c3bd-36b5-44d5-859e-dd080c8bf88f)
 
-(Insert screenshots here to illustrate tool setup, example inputs, and expected outputs.)
+- File Viewer: This part of VS Code shows several Python scripts (Fetchdata.py and others) and JSON files containing history logs (e.g., policies.google.com_history.json).
+- Script Output: The integrated terminal displays a message indicating that the script did not detect any changes after running the Fetchdata.py script.
+- History Log: The JSON file (policies.google.com_history.json) is open in the editor, displaying the structure of the stored history with timestamps and content from a privacy policy.
 
+### Python Script Code and Command Execution
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/6d86e64c-0bd0-4e0e-b162-acb8480297fd)
+
+- Code Editor: Shows the Fetchdata.py script, which includes functions for fetching web content, parsing it, and comparing it to historical data to detect changes.
+- 
+### Detailed Script and Functionality
+
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/3d31a622-c1ce-4568-91b4-2d842dc27178)
+
+- Script Details: A continuation of the Fetchdata.py script is visible, showing more detailed code that handles the comparison of website content and updates the history file accordingly.
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file in the GitHub repository for details.

@@ -2,6 +2,57 @@
 
 PolicyTracker is an innovative solution designed to keep users informed about the updates and changes to the privacy policies of various online services. This document outlines the core functionalities of PolicyTracker, focusing on its features, security measures, and the future direction of the platform.
 
+# Table of Contents
+- [Alpha Checkpoint](#alpha-check-point)
+1. - [Core Features Implementation](#core-features-implementation)
+   - [My Tracked Pages](#my-tracked-pages)
+   - [Track New Page](#track-new-page)
+   - [Detailed Policy View/Management](#detailed-policy-viewmanagement)
+   - [User Authentication System](#user-authentication-system)
+   - [Privacy Policy Tracking and Management](#privacy-policy-tracking-and-management)
+   - [Alerts and Notifications](#alerts-and-notifications)
+   - [Data Retrieval and Processing](#data-retrieval-and-processing)
+   - [Security Measures](#security-measures)
+   - [Database Models](#database-models)
+   - [Database Selection](#database-selection)
+   - [SQL in Django](#sql-in-django)
+   - [Security](#security)
+2. [Known Issues and Bugs Documentation](#known-issues-and-bugs-documentation)
+   - [Current Known Issues](#current-known-issues)
+   - [Reporting New Issues](#reporting-new-issues)
+3. [Testing Guidelines](#testing-guidelines)
+   - [Overview](#overview)
+   - [Testing Environment](#testing-environment)
+   - [Reporting Issues](#reporting-issues)
+   - [Continuous Integration (CI) and Continuous Deployment (CD)](#continuous-integration-ci-and-continuous-deployment-cd)
+4. [Installation and Configuration Instructions for PolicyTracker](#installation-and-configuration-instructions-for-policytracker)
+   - [Prerequisites](#prerequisites)
+   - [Step 1: Clone the Repository](#step-1-clone-the-repository)
+   - [Step 2: Set Up a Virtual Environment](#step-2-set-up-a-virtual-environment)
+   - [Step 3: Install Dependencies](#step-3-install-dependencies)
+   - [Step 4: Configure the Application](#step-4-configure-the-application)
+   - [Step 5: Initialize the Database](#step-5-initialize-the-database)
+   - [Step 6: Run the Development Server](#step-6-run-the-development-server)
+   - [Additional Configuration](#additional-configuration)
+5. [Architecture Overview](#architecture-overview)
+6. [Load Testing](#load-testing)
+   - [Overview](#overview-1)
+   - [Prerequisites](#prerequisites-1)
+   - [Setup](#setup)
+   - [Load Testing Steps](#load-testing-steps)
+   - [Optimization](#optimization)
+   - [Running the Tests](#running-the-tests)
+   - [Test Results](#test-results)
+7. [Risk Assessment and Mitigation Strategies for PolicyTracker](#risk-assessment-and-mitigation-strategies-for-policytracker)
+   - [Risk Identification](#risk-identification)
+   - [Mitigation Strategies](#mitigation-strategies)
+8. [Roadmap for Beta Release of PolicyTracker](#roadmap-for-beta-release-of-policytracker)
+   - [Key Features and Enhancements](#key-features-and-enhancements)
+9. [References](#references)
+
+
+# Alpha Check Point
+
 ## Core Features Implementation
 
 PolicyTracker offers a comprehensive suite of functionalities aimed at enhancing the user experience in tracking and managing privacy policy updates.
