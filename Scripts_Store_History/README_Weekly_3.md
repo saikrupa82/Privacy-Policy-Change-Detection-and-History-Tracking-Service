@@ -34,11 +34,69 @@ python Scripts_Store_History/Fetchdata.py "http://example.com/privacy-policy"
 ## Change Detection
 After parsing, the script analyzes the content, comparing it with previously stored versions to identify any changes. This comparison is logged and can be reviewed to see the historical evolution of the document.
 
+![Screenshot 2024-04-21 222612](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/c8c06709-22ec-4682-9cf8-30307a82a972)
+
 ## Logging Changes
 Every detected change is timestamped and saved in a JSON format, providing a reliable and searchable log that can be audited for compliance or review purposes.
 
+``` bash
+ if changes_detected:
+        print("Changes detected. Updating history.")
+        timestamp = datetime.now().isoformat()
+        history.setdefault('changes', []).append({
+            'timestamp': timestamp,
+            'content': new_content
+        })
+        history['last_update'] = {
+            'content': new_content,
+            'timestamp': timestamp,
+            'detailed_changes': detailed_changes
+        }
+    else:
+        print("No changes detected.")
+
+    print("Updating the last checked timestamp.")
+    history['last_checked'] = datetime.now().isoformat()
+```
+## Output File Structure and Management
+When the PolicyTracker script is executed, it performs several actions, culminating in the creation of a new directory with a collection of files that store the scraped data and history of changes. Below is the description of the directory and file structure created by the script:
+
+### Directory and File Creation
+Upon successful execution, the script will create a new folder named after the domain of the URL that was scraped. Inside this folder, the following files are generated:
+
+- HTML File (.html): This is the raw HTML content of the privacy policy page as retrieved by the script.
+Formatted JSON File (.json): A structured JSON representation of the privacy policy, organized by sections for easier reading and processing.
+- History Log JSON File (_history.json): This file contains the historical record of changes detected in the privacy policy over time, including timestamps and details of the modifications.
+- Metadata File (.meta): A metadata file that stores additional information about the scraping session, such as the date and time of the scrape, the version of the tool used, and any relevant settings or parameters.
+- Screenshot Image (.png): An image capture of the privacy policy page at the time of scraping, providing a visual reference for the document's appearance.
+Example Directory Structure
+After running the script, the directory structure will look something like this:
+
+``` bash
+
+github_com_a9a3bd936
+├── 20240421.html              # Raw HTML file
+├── 20240421.json              # Formatted JSON file
+├── 20240421_history.json      # History log of changes
+├── 20240421.meta              # Metadata file
+└── 20240421.png               # Screenshot of the policy
+```
+
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/86df5407-70ab-4aa3-84b4-e0f66e8d7545)
+
+Each file serves a specific purpose in the tracking and historical analysis of privacy policies, ensuring that users have a comprehensive set of data for review and comparison.
+
 ## History Management and JSON Format
 PolicyTracker effectively logs every update made to privacy policies it monitors. This section details the JSON structure that captures and stores these changes, simplifying data interpretation for developers and system administrators.
+
+``` bash
+    print("Updating the last checked timestamp.")
+    history['last_checked'] = datetime.now().isoformat()
+
+    print("Saving the history to file.")
+    with open(history_filename, 'w', encoding='utf-8') as file:
+        json.dump(history, file, ensure_ascii=False, indent=4)
+```
 
 ## JSON History File Structure
 Each privacy policy has a dedicated JSON file, storing:
