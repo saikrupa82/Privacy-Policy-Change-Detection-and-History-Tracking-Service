@@ -1,0 +1,7 @@
+{
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_username": "saikrupar82@gmail.com",
+    "smtp_password": "Schdog@82",
+    "sender_email": "saikrus1@umbc.edu"
+}
