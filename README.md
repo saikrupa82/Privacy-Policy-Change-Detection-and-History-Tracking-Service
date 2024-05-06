@@ -19,8 +19,40 @@ PolicyTracker automates the collection, analysis, and storage of online privacy 
 Setup Instructions: Detailed steps to set up PolicyTracker, including software dependencies and required environment variables.
 Configuration Guide: Instructions on customizing scraping configurations, history folder paths, and notification settings.
 Usage Examples:
-Single URL Scraping: How to scrape and monitor a single privacy policy URL.
-Bulk URL Scraping: How to provide a list of URLs for bulk policy monitoring.
+- **Single URL Scraping:** Scraping and monitor a single privacy policy URL.
+- **Bulk URL Scraping:** A list of URLs for bulk policy monitoring.
+  ![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/15f7b839-9329-4579-8f12-d5c0c0b10cc0)
+Input of the file: 
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/4dbb6873-684a-4e74-b45e-458d505ae97d)
+
+The file format:
+
+```bash
+URL,
+URL1,
+.
+.
+URLn
+```
+
+Example: 
+``` bash
+https://policies.google.com/privacy?hl=en-US,
+https://privacy.microsoft.com/en-us/privacystatement
+
+```
+
+### User Stories Overview
+
+| Req. ID | Requirement (User Story) | Link to UI Prototype | Expected Completion Date | Complexity | Risk   | Status            |
+|---------|---------------------------|----------------------|-------------------------|------------|--------|------------------|
+| 1       | As a User, I want to scrape privacy policy data directly from websites so that I can analyze the most current version of policies and accurately compare them with historical data. | Section 6, Prototype A | 03/26/2024 | High       | Medium | ✅ Completed      |
+| 2       | As a User, I want to maintain a history of changes for each privacy policy so that I can review past modifications and track differences over time. | Section 6, Prototype B | 04/02/2024 | Medium     | Medium | ✅ Completed      |
+| 3       | As a User, I want to detect changes in privacy policies efficiently so that I can quickly analyze differences between versions. | Section 6, Prototype C | 04/09/2024 | Medium     | Low    | ✅ Completed       |
+| 4       | As a User, I want to receive change notifications via email so that I can stay informed about updates to privacy policies and respond promptly. | Section 6, Prototype D | 04/16/2024 | High       | Medium | ✅ Completed      |
+| 5       | As a User, I want to provide URLs via a file or command line so that I can input the data efficiently using my preferred method. | Section 6, Prototype E | 04/23/2024 | Low        | Low    | ✅ Completed      |
+| 6       | As a User, I want to store HTML files locally so that I can keep a reference for future comparisons or analysis. | Section 6, Prototype F | 04/30/2024 | Medium     | Low    | ✅ Completed      |
+| 7       | As a User, I want to customize search keywords in privacy policies so that I can tailor the analysis to identify relevant sections of interest. | Section 6, Prototype G | 05/07/2024 | Medium     | Medium | ⏳ Pending            |
 
 
 
@@ -30,11 +62,6 @@ Bulk URL Scraping: How to provide a list of URLs for bulk policy monitoring.
 - **Data Gathering Process**: Executes systematic HTTP GET requests to fetch data comprehensively.
 
 ``` bash
-# Main process begins here
-print("Script started.")
-url = input("Enter the URL of the privacy policy to scrape: ")
-print(f"Fetching privacy policy from: {url}")
-
 # Placeholder for actual scraping functionality
 result = polipy.get_policy(url, screenshot=True)
 result.save(output_dir='.')
@@ -126,6 +153,42 @@ def compare_and_update_history(file_path, new_content, history_folder):
     with open(history_filename, 'w', encoding='utf-8') as file:
         json.dump(history, file, ensure_ascii=False, indent=4)
 ```
+
+### Email Notification Service:
+The email notification feature alerts stakeholders when significant changes are detected in a monitored privacy policy. It ensures stakeholders remain informed about updates affecting compliance or data practices. The emails summarize detected changes, enabling recipients to respond promptly and maintain their understanding of privacy policy requirements.
+
+- **Summarized Alerts**: Emails provide concise summaries of detected changes, highlighting sections with added, removed, or updated content.
+- **Customizable Recipients**: Notifications can be sent to a list of recipients provided by the user.
+- **Secure Transmission**: Uses TLS encryption to secure email data during transmission.
+
+**Function**
+
+```bash
+def send_email(subject, body, sender, recipients, password):
+    if isinstance(body, list):
+        body = "\n\n".join(f"Section: {section}\n" + "\n".join(diff) for section, diff in body)
+
+    msg = MIMEText(body)
+    msg['Subject'] = subject
+    msg['From'] = sender
+    msg['To'] = ', '.join(recipients)
+
+    try:
+        with smtplib.SMTP('smtp.gmail.com', 587) as smtp_server:
+            smtp_server.starttls()  # Upgrade to a secure connection
+            smtp_server.login(sender, password)
+            smtp_server.sendmail(sender, recipients, msg.as_string())
+        print("Message sent successfully!")
+    except Exception as e:
+        print(f"Failed to send email: {e}")
+```
+
+Calling function 
+``` bash
+        send_email(subject, detailed_changes, useremail, recipients, password)
+
+```
+
 ## Detailed Requirements :
 ### Functional Requirements:
 - **Scrape Privacy Policy Data**:
@@ -226,25 +289,34 @@ OR
 ```bash
 python fetchdata.py
 ```
-![Screenshot 2024-04-21 222612](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/b2fb01fb-15c5-437b-bcff-7818a4a6ffd1)
+![Screenshot 2024-05-05 200011](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/7a46c2e4-ff24-490f-aea9-c9dde96bade0)
+
 
 ## Execution and Results
 Scalability and Performance: Confirmed the script's ability to process numerous privacy policy URLs concurrently without degradation in speed or accuracy.
 
 ![Screenshot 2024-04-21 222638](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/095ce474-3e4a-4753-8369-78a8ad95d974)
 
-## Key Challenges and Mitigations:
 
-Frequent Website Structure Changes: Changes in privacy policy page structures could impact scraping accuracy.
-Mitigation: Implement machine learning models and dynamic algorithms to identify and adjust to website changes automatically.
-Data Privacy Concerns: Handling privacy policy data presents challenges in safeguarding sensitive information.
-Mitigation: Ensure data encryption at rest and in transit, employ strict access control measures, and conduct regular compliance audits.
-Notification Delivery Issues: Notifications may be delayed or marked as spam.
-Mitigation: Implement multiple notification channels like SMS or push notifications. Monitor email deliverability and follow best practices.
-Custom Alerts and Dashboard: Provide a customizable dashboard where users can set up alerts based on specific keywords or criteria.
-Multi-channel Notifications: Integrate additional channels like SMS and browser push notifications for improved user engagement.
-Integration with External Systems: Support seamless integration with third-party compliance and monitoring systems.
 
+### Key Challenges and Mitigations
+
+- **Frequent Website Structure Changes:** Changes in privacy policy page structures could impact scraping accuracy.
+  - **Mitigation:** Implement machine learning models and dynamic algorithms to identify and adjust to website changes automatically.
+
+- **Data Privacy Concerns:** Handling privacy policy data presents challenges in safeguarding sensitive information.
+  - **Mitigation:** Ensure data encryption at rest and in transit, employ strict access control measures, and conduct regular compliance audits.
+
+- **Notification Delivery Issues:** Notifications may be delayed or marked as spam.
+  - **Mitigation:** Implement multiple notification channels like SMS or push notifications. Monitor email deliverability and follow best practices.
+
+### Future Enhancements and Features
+
+- **Custom Alerts and Dashboard:** Provide a customizable dashboard where users can set up alerts based on specific keywords or criteria.
+
+- **Multi-channel Notifications:** Integrate additional channels like SMS and browser push notifications for improved user engagement.
+
+- **Integration with External Systems:** Support seamless integration with third-party compliance and monitoring systems.
 
 
 
