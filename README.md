@@ -1,15 +1,43 @@
 
 
-# PolicyTracker - Beta Release Overview
+# PolicyTracker - RC Release Overview
 
 ## Table of Contents
 
 
 ## Introduction
-The beta iteration of PolicyTracker demonstrates 85% completion of our envisioned product suite, showing significant enhancements from the alpha release towards a robust, user-oriented full-scale deployment.
+The RC iteration of PolicyTracker demonstrates 95% completion of our envisioned product suite, showing significant enhancements from the alpha release towards a robust, user-oriented full-scale deployment.
 
 ![System Architecture](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/8887619c-809f-439a-9531-b082b16c4c56)
 *Figure 1: System Architecture Overview*
+
+- The diagram above represents the architecture for PolicyTracker, demonstrating the different components involved and their interactions. Here's an overview:
+
+1. **Website:**
+   - **Purpose:** Serves as the source where privacy policies are hosted and can be accessed via web pages.
+   - **Function:** The system retrieves privacy policy data directly from these web pages.
+
+2. **Scraping Model:**
+   - **BeautifulSoup 4:** A Python library that helps gather data from multiple web pages by extracting useful content from the HTML.
+   - **Process:** This module sends requests to websites, collects data, and organizes it for further analysis.
+
+3. **Parsing Model:**
+   - **Purpose:** Responsible for parsing HTML content and identifying relevant tags, strings, and comments within the privacy policies.
+   - **Function:** Extracted data is then passed to the History Management Module.
+
+4. **History Management Module:**
+   - **Purpose:** Compares parsed data with historical versions to identify changes in privacy policies.
+   - **Function:** Stores any detected changes for future auditing and analysis.
+
+5. **Data Store:**
+   - **Purpose:** Central repository where data gathered from websites, historical logs, and detected changes are stored.
+   - **Function:** Acts as a source for future retrieval and comparison.
+
+**Overall Flow:**
+1. The **Website** provides policy pages to the **Scraping Model**.
+2. The **Scraping Model** extracts data using BeautifulSoup and processes it in the **Parsing Model**.
+3. The **Parsing Model** analyzes the extracted data and sends it to the **History Management Module**.
+4. The **History Management Module** identifies changes and stores the relevant data in the **Data Store** for further usage and monitoring.
 
 ## Web Scraping System Flow
 PolicyTracker automates the collection, analysis, and storage of online privacy policy data through a sophisticated sequence of operations:
@@ -330,9 +358,9 @@ pip install -r requirements.txt
 ```
 
 ## Conclusion
-The PolicyTracker system has demonstrated significant capabilities in the field of privacy policy tracking, offering robust tools to users for managing and staying updated on policy changes. The alpha and beta releases showcase a solid foundation with essential functionalities that enhance user engagement and system reliability. Through comprehensive command line testing, the application has proven its ability to handle multiple operations simultaneously, ensuring scalability and performance under load.
+The PolicyTracker system has demonstrated significant capabilities in the field of privacy policy tracking, providing robust tools for managing and staying updated on policy changes. My alpha, beta and RC releases showcased a solid foundation with essential functionalities that enhance user engagement and system reliability. Through comprehensive command line testing, I have proven the application's ability to handle multiple operations simultaneously, ensuring scalability and performance under load.
 
-The installation process has been streamlined to allow for easy setup, enabling users and developers alike to deploy PolicyTracker efficiently. With ongoing improvements and community feedback, PolicyTracker aims to become the leading solution in privacy policy management.
+I have streamlined the installation process to ensure easy setup, enabling users and developers to deploy PolicyTracker efficiently. With ongoing improvements and community feedback, I aim for PolicyTracker to become the leading solution in privacy policy management.
 
 
 
