@@ -338,8 +338,104 @@ Contributors interested in enhancing the history tracking capabilities of Policy
 - Improving the algorithms for change detection to capture more nuanced modifications.
 - Extending the JSON structure to include more detailed metadata about changes.
 - Optimizing the storage and retrieval of JSON files to enhance performance and scalability.
+## Testing
 
-## Command Line Testing
+1. **Measuring Defects:**
+   - **Stress Testing:**
+     - **Purpose:** To simulate continuous, real-world usage conditions to identify crashes, exceptions, or incorrect outputs.
+     - **Methodology:** I employed Python's `subprocess` module to repeatedly run `fetchdata.py` against various URLs, both small and large, ensuring the system could handle diverse data.
+     - **Code Example:**
+     ```python
+     import subprocess
+
+     # Sample URLs for stress testing
+     urls = ['https://example.com/privacy', 'https://another.com/policy']
+
+     for url in urls:
+         # Running the tool repeatedly to test reliability
+         subprocess.run(['python', 'fetchdata.py', url])
+     ```
+     - **Outcome:** Continuous monitoring and logging identified any defects encountered.
+
+   - **Automated Testing:**
+     - **Purpose:** To ensure consistent behavior and accurate outputs using predefined test cases.
+     - **Methodology:** The `unittest` framework was used to simulate workflows, validate outputs, and test error handling.
+     - **Code Example:**
+     ```python
+     import unittest
+     from subprocess import run
+
+     class PolicyScrapingTests(unittest.TestCase):
+
+         def test_valid_url_scraping(self):
+             # Ensure the tool returns success on a valid URL
+             result = run(['python', 'fetchdata.py', 'https://example.com/privacy'])
+             self.assertEqual(result.returncode, 0)
+
+         def test_invalid_url_handling(self):
+             # Ensure invalid URLs return errors
+             result = run(['python', 'fetchdata.py', 'https://nonexistent-url.com'])
+             self.assertNotEqual(result.returncode, 0)
+
+     if __name__ == '__main__':
+         unittest.main()
+     ```
+     - **Outcome:** Automated testing verified correct behavior and highlighted areas requiring improvement.
+
+   - **Error Logging:**
+     - **Purpose:** To track and analyze errors encountered during the scraping process.
+     - **Methodology:** The `logging` module was used to create a detailed error log that captured defects and exceptions.
+     - **Code Example:**
+     ```python
+     import logging
+
+     # Configure logging for error tracking
+     logging.basicConfig(filename='scraping_errors.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+
+     try:
+         # Example scraping process with error handling
+         response = requests.get('https://example.com/privacy')
+         response.raise_for_status()  # Will raise an exception for failed requests
+     except requests.exceptions.RequestException as e:
+         # Log errors and continue processing
+         logging.error(f"Error occurred while scraping URL: {e}")
+     ```
+     - **Outcome:** Error logs were used to identify and address frequent error patterns.
+
+2. **Measuring Concurrency:**
+   - **Simultaneous Instances:**
+     - **Purpose:** To assess resource usage and performance when multiple users access the system concurrently.
+     - **Methodology:** I used `subprocess` to run multiple instances of `fetchdata.py` concurrently, staggering the start times to simulate realistic load.
+     - **Code Example:**
+     ```python
+     import subprocess
+     import time
+
+     # URLs for testing concurrent usage
+     urls = ['https://example.com/privacy', 'https://another.com/policy']
+     concurrent_instances = 5  # Number of parallel instances
+     processes = []
+
+     for i in range(concurrent_instances):
+         # Rotate through URLs and start multiple instances
+         process = subprocess.Popen(['python', 'fetchdata.py', urls[i % len(urls)]])
+         processes.append(process)
+         time.sleep(1)  # Optional stagger for realistic load
+
+     # Wait for all processes to complete
+     for process in processes:
+         process.wait()
+     ```
+     - **Outcome:** Monitored resource usage and execution time for each instance to determine performance.
+![Screenshot 2024-05-05 230022](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/0c2d003a-7467-4a08-bba2-cae273ba5bfb)
+
+   - **Benchmarking Tools:**
+     - **Purpose:** To generate user load, simulate concurrency, and identify potential bottlenecks.
+     - **Methodology:** Load testing tools like `Apache JMeter` or `Locust` were configured to simulate user behavior and collect performance metrics.
+     - **Code Implementation:** Not directly implemented in code here, but scripts were developed to support the test scenarios, and analysis of test results provided insights.
+
+
+### Command Line Testing
 Testing via the command line has proven the script's effectiveness in handling multiple URLs, reflecting the system's capability to scale and perform under load:
 
 ```bash
