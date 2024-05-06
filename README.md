@@ -362,5 +362,42 @@ The PolicyTracker system has demonstrated significant capabilities in the field 
 
 I have streamlined the installation process to ensure easy setup, enabling users and developers to deploy PolicyTracker efficiently. With ongoing improvements and community feedback, I aim for PolicyTracker to become the leading solution in privacy policy management.
 
+## References
+
+1. **Requests:**
+   - *HTTP for Humans™.* [Official Documentation](https://requests.readthedocs.io/)
+   - A simple and elegant HTTP library for Python used to make HTTP requests simpler and more human-friendly.
+
+2. **Beautiful Soup:**
+   - *Beautiful Soup Documentation.* [Documentation Link](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+   - Official documentation for Beautiful Soup, a Python library designed for quick turnaround projects like screen-scraping.
+
+3. **Requests (Alternate Reference):**
+   - *Requests: HTTP for Humans.* [Official Documentation](https://requests.readthedocs.io/)
+   - Documentation for Requests, making HTTP requests simpler and more user-friendly.
+
+4. **Python Standard Library - difflib:**
+   - *difflib — Help for computing deltas.* [Documentation Link](https://docs.python.org/3/library/difflib.html)
+   - Documentation for difflib, which computes differences between files and data sequences.
+
+5. **Python Standard Library - sys:**
+   - *sys — System-specific parameters and functions.* [Documentation Link](https://docs.python.org/3/library/sys.html)
+   - Documentation for the sys module, used to manipulate parts of the Python runtime environment.
+
+6. **Python Standard Library - os:**
+   - *os — Miscellaneous operating system interfaces.* [Documentation Link](https://docs.python.org/3/library/os.html)
+   - Documentation for the os module, which provides ways to interact with the operating system.
+
+7. **OAuth:**
+   - *OAuth Community Site.* [OAuth Guide](https://oauth.net/)
+   - A comprehensive guide to OAuth, a protocol allowing secure authorization from web, mobile, and desktop apps.
+
+8. **GitHub - Command Line Tools:**
+   - *GitHub CLI Documentation.* [GitHub CLI Guide](https://cli.github.com/)
+   - Guide on using GitHub via command-line tools to manage repositories, branches, commits, and more.
+
+9. **Python Documentation - smtplib:**
+   - *smtplib — SMTP protocol client.* [Documentation Link](https://docs.python.org/3/library/smtplib.html)
+   - Documentation for smtplib, Python's built-in module for sending emails through the SMTP protocol.
 
 
