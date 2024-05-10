@@ -139,7 +139,7 @@ def clean_old_history_files(directory):
             date_str = match.group(1)
             date_int = int(date_str)
             all_files.append((date_int, file_name))
-            if date_int > latest_date:
+            if date_int < latest_date:
                 latest_date = date_int
 
     # Debug output: latest date found
@@ -147,6 +147,7 @@ def clean_old_history_files(directory):
 
     # Second pass to delete old history files (excluding `.html` files)
     print("\nStarting deletion of old files...")
+    print(all_files)
     for date_int, file_name in all_files:
         if date_int != latest_date:
             file_path = os.path.join(directory, file_name)
@@ -154,6 +155,22 @@ def clean_old_history_files(directory):
             os.remove(file_path)
 
     print("Deletion completed.")
+
+def extract_section_by_keyword(file_path, keyword):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    
+    # Store results in a dictionary
+    results = {}
+    # Loop through each change record in the JSON file
+    for change in data['changes']:
+        # Search each section within the content
+        for section, content in change['content'].items():
+            # Check if keyword is in any text within the content list
+            if any(keyword.lower() in text.lower() for text in content):
+                results[section] = content
+    
+    return results
 
 domain_email =''
 # Modify scrape_privacy_policy to call clean_old_history_files
@@ -169,6 +186,9 @@ def scrape_privacy_policy(file_path, history_folder):
     
     # Clean old history files in the given history folder
     clean_old_history_files(history_folder)
+    print(history_folder)
+    keyword = input('Enter the keyword :')
+    print(extract_section_by_keyword(history_folder,keyword))
     print(f"Finished processing: {file_path}")
 
 
@@ -183,7 +203,6 @@ def process_url(url, history_folder):
     """Process the privacy policy by scraping directly from the provided URL."""
     result = polipy.get_policy(url, screenshot=True)
     result.save(output_dir='.')
-    print(result)
     domain_email = urlparse(url).netloc.replace('www.', '').split('/')[0]
     domain_prefix = urlparse(url).netloc.replace('www.', '').split('.')[0]
     html_files = []
@@ -191,9 +210,10 @@ def process_url(url, history_folder):
         if os.path.isdir(folder) and folder.startswith(domain_prefix):
             folder_path = os.path.join(os.getcwd(), folder)
             html_files.extend(find_html_files(folder_path))
-
-    for html_file in html_files:
-        scrape_privacy_policy(html_file, history_folder)
+    latest_html_file = max(html_files, key=os.path.getmtime)
+    # for html_file in html_files:
+    print("folder_path:", folder_path, "history_folder :",history_folder)
+    scrape_privacy_policy(latest_html_file,folder_path)
 
 def process_file(file_path, history_folder):
     """Process the privacy policy from an existing HTML file."""
