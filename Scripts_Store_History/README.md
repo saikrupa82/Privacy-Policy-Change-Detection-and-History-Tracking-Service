@@ -1,107 +1,93 @@
+# Notification Service for Privacy Policy Change Detection and Historical Tracking
 
-# Privacy Policy Change Detection and Historical Tracking Service
+## Project Overview
+This project, developed under the Ethical Software Lab at UMBC, aims to create a robust notification service that detects changes in privacy policies, highlights these changes, and maintains a historical log for tracking. The service enhances transparency and helps users easily understand modifications in privacy policies.
 
-## Overview
-
-The Privacy Policy Change Detection and Historical Tracking Service is a Python-based automation tool designed to help users monitor updates and changes in website privacy policies over time. It works by fetching the latest version of a privacy policy from a specified URL, parsing the text, and comparing it with a stored version to detect any changes. This tool is particularly useful for privacy-conscious individuals, researchers, and organizations that need to stay informed about how their or their users' information may be treated by service providers.
+### Capstone Project Details:
+- **Date and Time:** 05-09-2023, 7:42 PM
+- **Student Name:** Sai Krupa Reddy Surarapu
+- **Project Name:** Notification Service for Privacy Policy Change Detection and Historical Tracking
+- **Sponsor:** Ethical Software Lab at UMBC
+- **Advisor:** Dr. Samarah
 
 ## Features
 
-- **Automated Fetching:** Utilizes the Requests library to automatically retrieve the content of privacy policy webpages.
-- **Intelligent Parsing:** Employs BeautifulSoup4 to parse HTML content and segment privacy policies into manageable sections based on headings.
-- **Change Detection:** Leverages the difflib library to perform a detailed comparison between the current and previously stored versions of a policy, identifying additions, deletions, and modifications.
-- **Historical Tracking:** Maintains a JSON file for each tracked privacy policy, logging all changes detected during each script run, along with timestamps for easy historical analysis.
-- **Console Notifications:** Outputs a summary of detected changes and relevant metadata to the console, enabling quick reviews or integrations with further notification systems.
+1. **Change Detection and Highlighting**
+   - **Visual Display:** Detected changes are visually highlighted directly within the text or JSON file format, improving user comprehension.
+   - **Text/JSON Highlighting:** Changes in privacy policy text or JSON data are made easily noticeable.
 
-## Requirements
-
-To run this tool, you will need:
-- Python 3.6 or newer
-- The Requests library for Python
-- BeautifulSoup4 for HTML parsing
+2. **Historical Change Log**
+   - **Development in Progress:** A feature to record and display all changes made to a privacy policy over time.
 
 ## Installation
 
-Follow these steps to set up the Privacy Policy Change Detection tool:
+To get started with this project, ensure you have Python installed. Follow these steps to set up the project:
 
-1. **Clone the GitHub Repository:**
-
-   ```shell
-   git clone https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service.git
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/edit/main/Scripts_Store_History
    ```
 
-2. **Navigate to the Tool's Directory:**
 
-   ```shell
-   cd Privacy-Policy-Change-Detection-and-History-Tracking-Service/Scripts_Store_History
-   ```
+## Usage
+Function: extract_section_by_keyword
+- This function searches a JSON file for specified keywords within the privacy policy content and extracts relevant sections.
 
-3. **Install Dependencies:**
-
-   Ensure you have Python and pip installed on your system, then run:
-
-   ```shell
-   pip install requests beautifulsoup4
-   ```
-
-## Usage Guide
-
-1. **Start the Script:**
-
-   Run the script from your terminal or command prompt:
-
-   ```python
-   python Fetchdata.py
-   ```
-
-2. **Input the URL:**
-
-   When prompted, enter the full URL of the privacy policy page you wish to track. Make sure to include the `http://` or `https://` prefix.
-
-   ```plaintext
-   Enter the URL of the privacy policy to scrape: [https://policies.google.com/privacy?hl=en-US](https://policies.google.com/privacy?hl=en-US)
-   ```
-
-3. **Review the Detected Changes:**
-
-   After the script runs, it will output any detected changes directly to the console, along with the timestamp of the last check.
-
-## How It Works
-
-### Fetching and Parsing
-
-- The script first sends a GET request to the specified URL to fetch the webpage content.
-- It then parses the HTML using BeautifulSoup4, extracting text from headings and paragraphs to segment the privacy policy into distinct sections.
-
-### Change Detection
-
-- It compares the fetched policy text against a previously stored version (if available) in a JSON file named after the website's domain.
-- The comparison is done section by section, using the difflib library to identify detailed changes.
-
-## File Structure
-
-- `Fetchdata.py`: The main Python script.
-- `domainname_history.json`: Automatically generated files that store the change history for each tracked website's privacy policy.
+### Parameters:
+- **file_path (str):** Path to the JSON file.
+- **keyword (str):** The keyword to search for.
+### How to Run:
+- **Prepare JSON File:** Ensure your JSON file is formatted correctly with a changes array containing content objects.
+- Execute the Function:
+Enter the Keyword when the file is running
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/f165e725-3eda-49bc-b465-5f0aa350b324)
 
 
-## Screenshots
-### Script Execution and JSON History File
-![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/c761c3bd-36b5-44d5-859e-dd080c8bf88f)
+Run the file 
+``` bash
+python Fetchdata.py
+```
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/f5c14ae2-6c48-4df5-a5f8-5d1cbe62dec8)
 
-- File Viewer: This part of VS Code shows several Python scripts (Fetchdata.py and others) and JSON files containing history logs (e.g., policies.google.com_history.json).
-- Script Output: The integrated terminal displays a message indicating that the script did not detect any changes after running the Fetchdata.py script.
-- History Log: The JSON file (policies.google.com_history.json) is open in the editor, displaying the structure of the stored history with timestamps and content from a privacy policy.
+**Function:** scrape_privacy_policy
+- This function scrapes a privacy policy from an HTML file, extracts sections, compares them with historical records, and cleans old history files.
 
-### Python Script Code and Command Execution
-![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/6d86e64c-0bd0-4e0e-b162-acb8480297fd)
+**Parameters:**
+- **file_path (str):** Path to the HTML file.
+- **history_folder (str):** Path to the directory containing historical records.
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/717d6bc1-bd32-4035-86da-c9778ec89d61)
 
-- Code Editor: Shows the Fetchdata.py script, which includes functions for fetching web content, parsing it, and comparing it to historical data to detect changes.
-- 
-### Detailed Script and Functionality
 
-![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/3d31a622-c1ce-4568-91b4-2d842dc27178)
+**Function:** extract_section_by_keyword
+- This function searches a JSON file for specified keywords within the privacy policy content and extracts relevant sections.
 
-- Script Details: A continuation of the Fetchdata.py script is visible, showing more detailed code that handles the comparison of website content and updates the history file accordingly.
-## License
+**Parameters:**
+- file_path (str): Path to the JSON file.
+- keyword (str): The keyword to search for.
 
-This project is licensed under the MIT License - see the LICENSE.md file in the GitHub repository for details.
+![image](https://github.com/saikrupa82/Privacy-Policy-Change-Detection-and-History-Tracking-Service/assets/46783175/f0bca8a1-3adc-4c2c-9344-dcc9b17663c8)
+
+
+## Weekly Status Report
+### Status Details:
+**1. Work Accomplished This Week:**
+- **Implemented Keyword-Based Section Extraction:** Enhanced the system to allow dynamic input of keywords for targeted analysis of privacy policy sections.
+- **Optimized Data Retrieval and Testing:** Improved the data retrieval process for faster and more accurate extraction and validated functionality through comprehensive testing.
+- **Developed User Interface and Updated Documentation:** Created a user-friendly command-line interface and updated documentation to ensure ease of use and accessibility for all users.
+- **Testing and Validation:** Conducted thorough testing to validate the functionality of the keyword extraction feature. This included multiple scenarios to ensure that the feature accurately captures all relevant sections containing the specified keywords.
+
+**2. Work Planned for Next Week:**
+- Finalize the Historical Change Log feature.
+- Conduct comprehensive testing.
+- Prepare for the final presentation.
+- Conduct a final checkpoint review.
+  
+**3. Problems, Obstacles, Needs, or Questions:**
+- Ensure the Historical Change Log feature is robust.
+- Manage time effectively to complete all tasks before the final presentation.
+  
+### Overall Status:
+- Project Status Color: Green
+- Previous Week's Status Color: Green
+  
+This week saw significant progress in developing the notification service. As we enter the final phase, our focus will be on ensuring completeness and accuracy, along with preparation for the final presentation. We are committed to delivering a high-quality solution that meets our stakeholders' needs.
